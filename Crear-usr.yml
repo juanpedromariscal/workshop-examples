@@ -1,0 +1,8 @@
+- name: add several users
+  user:
+    name: "{{ ops1 }}"
+    state: present
+    groups: "{{ dbadmin }}"
+    home: /home/dbadmin
+  loop:
+    - { name: 'ops1', groups: 'dbadmin' }
